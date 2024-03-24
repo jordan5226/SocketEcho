@@ -89,7 +89,7 @@ BOOL UDPEcho( char* lpszHost, char* lpszPort )
 
         for( iStart = 0; iStart < iOut; iStart += iLen )
         {
-            iLen = recvfrom( s, szBuf + iStart, ( sizeof( char ) * LEN_BUF ), 0, (struct sockaddr*)&sout, (socklen_t*)&iAddrLen );
+            iLen = recvfrom( s, szBuf + iStart, iOut - iStart, 0, (struct sockaddr*)&sout, (socklen_t*)&iAddrLen );
 
             if( iLen < 0 )
             {
