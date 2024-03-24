@@ -94,7 +94,7 @@ BOOL TCPEcho( char* lpszHost, char* lpszPort )
 
         for( iStart = 0; iStart < iOut; iStart += iLen )
         {
-            iLen = recv( s, szBuf, sizeof( char ) * LEN_BUF, 0 );
+            iLen = recv( s, szBuf + iStart, sizeof( char ) * LEN_BUF, 0 );
 
             if( iLen < 0 )
             {
