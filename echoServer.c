@@ -154,7 +154,7 @@ int InitServer( enum PROTO eProtocal, int iPort, int iConnNum )
     }
 
     int opt = 1;
-    if( setsockopt( s, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof( opt ) ) )
+    if( setsockopt( s, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof( opt ) ) < 0 )
     {
         printf( "setsockopt failed! ( Err: '%s' )\n", strerror(errno) );
         exit( 1 );
